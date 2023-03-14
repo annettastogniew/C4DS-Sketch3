@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="An interactive analysis of which factors impact a survivor's likelihood to report SA to police.">
+    <meta name="keywords" content="drag and drop, interactive, crime, police report">
+    <meta name="author" content="Annetta Stogniew and Elijah Nicholson-Messmer, Northeastern University">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="og:title" content="Decoding the Decision to Report Sexual Assault"/>
+    <meta name="og:url" content="https://dawn-wise-basement.glitch.me/"/>
+    <meta name="og:image" content="./nichefy.jpg"/>
+    <meta name="og:type" content="interactive" />
+    <meta name="og:description" content="An interactive analysis of which factors impact a survivor's likelihood to report SA to police."/>
+    <meta name="og:locale" content="en_US" />
+    <title>Who's Calling The Police?</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="project.css" type="text/css" charset="utf-8" />
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+  </head>
+  <body>
+    <div class="container" style="text">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <header style="padding-top: 2rem">
+            <h1>Decoding the Decision to Report Sexual Assault</h1>
+            <p class="byline">By Annetta Stogniew and Elijah Nicholson-Messmer</p>
+          </header>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <main>
+            <p>
+              The emergence of the #MeToo movement in late 2017 drove a surge in reports of sexual assault from survivors. 
+              While the movement shined a light on the abuses of powerful men in hollywood, tech, and government, #MeToo has been critisized 
+              for ignoring factors like age, income, and education that affect more marginalized individuals in their decision to report an assault to the police or  not.
+              <br/>
+              <br/>
+              From 2015 to 2019, <a href="https://www.rainn.org/statistics/criminal-justice-system">69%</a> of sexual assaults were not reported to the police, according to the National Crime Victimization Survey, 
+              an annual American household survey conducted by the Bureau of Justice Statistics. But certain factors affect the probability that a sexual assault will be reported to the police more than others.
+              <br/>
+              <br/>
+              Rank the following factors in order of how impactful you think they are in a survivor's decision to report to the police. 
+              <br/>
+              <br/>
+              <strong id="desktop-directions">
+                Drag and drop factors to the list below.
+              </strong>
+              <strong id="mobile-directions">
+                Type your guesses for the order of importance of factors listed below.
+              </strong>
+            </p>
+            <!-- desktop -->
+            <div class="row" id="desktop-content">
+              <div class="col">
+                <!-- drag items -->
+                <div class="list-container">
+                  <div id="ager" class="drag-drop-item drag" draggable="true" ondragstart="drag(event)" ondrag="duringDrag(event, false)" ondragend="afterDrag(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" fill="currentColor" class="bi bi-grip-vertical" viewbox="0 0 16 16">
+                      <path d="M7 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                    </svg>
+                    <div class="drag-label">
+                      Survivor's Age
+                    </div>
+                  </div>
+                  <div id="vicservices" class="drag-drop-item drag" draggable="true" ondragstart="drag(event)" ondrag="duringDrag(event, false)" ondragend="afterDrag(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" fill="currentColor" class="bi bi-grip-vertical" viewbox="0 0 16 16">
+                      <path d="M7 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                    </svg>
+                    <div class="drag-label">
+                      Received Victim Services
+                    </div>
+                  </div>
+                  <div id="treatment" class="drag-drop-item drag" draggable="true" ondragstart="drag(event)" ondrag="duringDrag(event, false)" ondragend="afterDrag(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" fill="currentColor" class="bi bi-grip-vertical" viewbox="0 0 16 16">
+                      <path d="M7 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                    </svg>
+                    <div class="drag-label">
+                      Received Medical Treatment
+                    </div>
+                  </div>
+                  <div id="educatn1" class="drag-drop-item drag" draggable="true" ondragstart="drag(event)" ondrag="duringDrag(event, false)" ondragend="afterDrag(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" fill="currentColor" class="bi bi-grip-vertical" viewbox="0 0 16 16">
+                      <path d="M7 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                    </svg>
+                    <div class="drag-label">
+                      Survivor's Education Level
+                    </div>
+                  </div>
+                  <div id="hincome1" class="drag-drop-item drag" draggable="true" ondragstart="drag(event)" ondrag="duringDrag(event, false)" ondragend="afterDrag(event)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" fill="currentColor" class="bi bi-grip-vertical" viewbox="0 0 16 16">
+                      <path d="M7 2a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 5a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM7 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                    </svg>
+                    <div class="drag-label">
+                      Survivor's Household Income
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <!-- drop areas -->
+                <div class="list-container">
+                  <div class="list-item">
+                    <p class="list-number">1.</p>
+                    <div id="first" class="drag-drop-item drop" ondrop="drop(event, false)" ondragover="allowDrop(event)" ondrag="duringDrag(event, true)"> 
+                    </div>
+                  </div>
+                  <div class="list-item">
+                    <p class="list-number">2.</p>
+                    <div id="second" class="drag-drop-item drop" ondrop="drop(event, false)" ondragover="allowDrop(event)" ondrag="duringDrag(event, true)">
+                    </div>
+                  </div>
+                  <div class="list-item">
+                    <p class="list-number">3.</p>
+                    <div id="third" class="drag-drop-item drop" ondrop="drop(event, false)" ondragover="allowDrop(event)" ondrag="duringDrag(event, true)">
+                    </div>
+                  </div>
+                  <div class="list-item">
+                    <p class="list-number">4.</p>
+                    <div id="fourth" class="drag-drop-item drop" ondrop="drop(event, false)" ondragover="allowDrop(event)" ondrag="duringDrag(event, true)">
+                    </div>
+                  </div>
+                  <div class="list-item">
+                    <p class="list-number">5.</p>
+                    <div id="fifth" class="drag-drop-item drop" ondrop="drop(event, false)" ondragover="allowDrop(event)" ondrag="duringDrag(event, true)">
+                    </div>
+                  </div>
+                </div> 
+              </div>
+              <div class="button-container">
+                <button class="submit-button" onclick="showResults(false)">Submit My Ranking</button>
+              </div>
+              <div class="alert alert-warning hidden" role="alert"> Please rank all factors to submit your choices. </div>
+            </div>
+            <!-- mobile -->
+            <div class="row" id="mobile-content">
+              <div class="col">
+                <div>
+                  <ul>
+                    <li>Survivor's Age</li>
+                    <li>Received Victim Services</li>
+                    <li>Received Medical Treatment</li>
+                    <li>Survivor's Education Level</li>
+                    <li>Survivor's Household Income</li>
+                  </ul>
+                </div>
+                <ol>
+                  <li><input type="text" required id="mobile-first"></li>
+                  <li><input type="text" required id="mobile-second"></li>
+                  <li><input type="text" required id="mobile-third"></li>
+                  <li><input type="text" required id="mobile-fourth"></li>
+                  <li><input type="text" required id="mobile-fifth"></li>
+                </ol>
+                <div class="button-container">
+                <button class="submit-button" onclick="showResults(true)">Submit My Ranking</button>
+              </div>
+              <div class="alert alert-warning hidden mobile" role="alert"> Please rank all factors word-for-word to submit your choices.</div>
+              </div>
+            </div>
+            <div id="results">
+              <p id="results-text">
+              </p>
+              <div class="row">
+                <div class="col">
+                  <p>Your ranking:</p>
+                  <ol>
+                    <li id="sub-first"></li>
+                    <li id="sub-second"></li>
+                    <li id="sub-third"></li>
+                    <li id="sub-fourth"></li>
+                    <li id="sub-fifth"></li>
+                  </ol>
+                </div>
+                <div class="col">
+                  <p>Actual ranking:</p>
+                  <ol>
+                    <li id="acc-first">Received Victim Services</li>
+                    <li id="acc-second">Survivor's Household Income</li>
+                    <li id="acc-third">Received Medical Treatment</li>
+                    <li id="acc-fourth">Survivor's Age</li>
+                    <li id="acc-fifth">Survivor's Education Level</li>
+                  </ol>
+                </div>
+              </div>
+              <p id="learn-more-text">
+              </p>
+              <div class="button-container">
+                <button class="submit-button" onclick="showTabs()">Learn More</button>
+              </div>
+            </div>
+            <div id="hidden-tabs">
+              <p>
+                <strong>Click through the tabs below to learn more about how each factor impacts a survivor's likelihood to report a sexual assault.</strong>
+              </p>
+              <!-- Tab links -->
+              <div class="tab">
+                <button class="tab-button selected" onclick="openTab(event, 'vicservices')">Victim Services</button>
+                <button class="tab-button" onclick="openTab(event, 'hincome1')">Household Income</button>
+                <button class="tab-button" onclick="openTab(event, 'treatment')">Medical Treatment</button>
+                <button class="tab-button" onclick="openTab(event, 'ager')">Age</button>
+                <button class="tab-button" onclick="openTab(event, 'educatn1')">Education Level</button>
+              </div>
+              <!-- Tab content -->
+              <div id="vicservices-tab" class="tabcontent shown">
+                <h3>Victim Services</h3>
+                <p>
+                  Victim service agencies differ in their exact policies, but research has shown that a third party's encouragement to report when consulted by a survivor has a significant influence on whether they report it to the police.
+                  Over 50% of sexual assault survivors who consulted with someone else about reporting ultimately reported the assault to the police, according to the <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4243174/">National Institutes of Health</a>. 
+                  In comparison, less than 10% of survivors who did not consult someone, or consulted someone who did not encourage them to report, ultimately ended up reporting their assault to the police.
+                </p>
+                <div class="dot-flashing"></div>
+                <div id="vicservices-chart"></div>
+              </div>
+
+              <div id="hincome1-tab" class="tabcontent hidden">
+                <h3>Survivor's Household Income</h3>
+                <p>
+                  “Our willingness to believe victims of harassment and violence is not extended to all victims equally,” <a href="https://www.theatlantic.com/business/archive/2017/12/low-wage-workers-sexual-harassment/549158/">says Emily Martin</a>, 
+                  general counsel and vice president for workplace justice at the National Women’s Law Center. “If you’re poor, you may be found less credible when you tell your story.”
+                </p>
+                <div class="dot-flashing"></div>
+                <div id="hincome1-chart"></div>
+              </div>
+
+              <div id="ager-tab" class="tabcontent hidden">
+                <h3>Survivor's Age</h3>
+                <p>
+                  Teens and young adults who have experiennced a sexual assault are the least likely age groups to report it to the police. These survivor's often say they did not report the attack because they did not want others to know,
+                  they feared hostility from the police, reprisal by the attacker, or did not know how to report the crime, according to research from the <a href="https://www.ojp.gov/pdffiles1/nij/182369.pdf">Office of Justice Programs</a>.
+                </p>
+                <div class="dot-flashing"></div>
+                <div id="ager-chart"></div>
+              </div>
+
+              <div id="educatn1-tab" class="tabcontent hidden">
+                <h3>Survivor's Education Level</h3>
+                <p>
+                  A survivor's level of education is often a consequence of sexual assault. According to the <a href="https://www.pcar.org/sites/default/files/pages-pdf/poverty_and_sexual_violence.pdf">Pennsylvania Coalition Against Rape</a>, "Teens and young adults experience interruptions in
+                  their education as a result of sexual violence, often dropping out and entering
+                  the workforce without the skills they need to compete for well-paying jobs."
+                </p>
+                <div class="dot-flashing"></div>
+                <div id="educatn1-chart"></div>
+              </div>
+
+              <div id="treatment-tab" class="tabcontent hidden">
+                <h3>Medical Treatment</h3>
+                <p>A survivor reporting sexual assault to the police is one of the strongest predictors of whether they will receive medical treatment or not. 
+                  "victims have typically been required to report the incident to the police in order to receive state-funded emergency medical care," according to researchers at the <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4084754/">National Institutes of Health</a>. 
+                  "These practices can discourage victims who do not wish to report the incident from seeking needed medical treatment." Laws mandating sexual assault reporting by medical personnel vary from state-to-state, according to the <a href="https://ndaa.org/wp-content/uploads/Rape-Reporting-Requirement-for-Competent-Adult-Victims_Compilation.pdf">National District Attorney Association</a>.</p>
+                <div class="dot-flashing"></div>
+                <div id="treatment-chart"></div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+    <footer class="container-fluid">
+        <div class="row" style="padding: 3rem">
+            <div class="col-lg-6">
+                <p>
+                  <strong style="color: #FFD717">About the project:</strong><br> Data from the <a href="https://data.ojp.usdoj.gov/Victims/NCVS-Select-Personal-Victimization/gcuy-rt5g">National Crime Victimization Survey</a> was pulled from 2002 to 2021 to determine which factors are most impactful in a survivor's likelihood to report a sexual assault. See our source code.
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <p>
+                  <strong style="color: #FFD717">Connect with us:</strong><br> Annetta Stogniew: <a href="https://twitter.com/a_stogniew">@a_stogniew</a> <br> Elijah Nicholson-Messmer: <a href="https://twitter.com/ElijahMessmer">@ElijahMessmer</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="project.js"></script>
+  </body>
+</html>
