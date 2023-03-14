@@ -1,20 +1,12 @@
-# Scrollama + Bootstrap Boilerplate
+# Decoding the Decision to Report Sexual Assault
 
-This is a small example of how to create scrollytelling webpage with [scrollama.js](scrollama.js)
-(for interactions) with [Bootstrap](https://getbootstrap.com/) (for styling and gridding). This is
-tiny example, with miminal functionality, commented heavily for learning purposes.
-
-## TO DO
-
-Throughout the source code as comments noted with `TODO` indicating things that are still remaining
-to be improved.
+This project uses data from the [National Crime Victimization Survey API](https://bjs.ojp.gov/national-crime-victimization-survey-ncvs-api) from 2002 to 2021 to determine which factors are most impactful in a survivor's likelihood to report a sexual assault. The information is displayed in an interactive site.
 
 ## Links
 
-- The project is [remixable on Glitch](https://glitch.com/edit/#!/scrollama-with-bootstrap-boilerplate)
-- The source code [is tracked on Github](https://github.com/rahulbot/scrollama-bootstrap-boilerplate)
-- The live site is viewable [on Glitch](https://scrollama-with-bootstrap-boilerplate.glitch.me) or [Github Pages](https://rahulbot.github.io/scrollama-bootstrap-boilerplate/)
+- The project is [remixable on Glitch](https://glitch.com/edit/#!/dawn-wise-basement)
+- The live site is viewable [on Glitch](https://dawn-wise-basement.glitch.me)
 
 ## Credits
 
-Created by Rahul Bhargava.
+Created by Annetta Stogniew and Elijah Nicholson-Messmer.
